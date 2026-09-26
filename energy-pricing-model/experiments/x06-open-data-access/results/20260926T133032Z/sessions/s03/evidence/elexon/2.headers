@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Date: Sat, 26 Sep 2026 13:32:18 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-cache
+ETag: 251890881
+x-ms-client-request-id: fd4d0657-0cd4-4337-93be-fbf010f92b28
+X-Response-Time: 9.052ms
+X-Content-Type-Options: nosniff
+X-Frame-Options: sameorigin
+X-XSS-Protection: 1; mode=block
+Strict-Transport-Security: max-age=31536000;includeSubDomains;
+

@@ -1,0 +1,1 @@
+{"detail":[{"type":"extra_forbidden","loc":["query","datetime"],"msg":"Extra inputs are not permitted","input":"2026-03-10"}]}

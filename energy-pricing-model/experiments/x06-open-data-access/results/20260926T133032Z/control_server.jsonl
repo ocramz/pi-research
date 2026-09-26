@@ -1,0 +1,15 @@
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/127f04c2a8aaafbc/series.csv", "session": "s01", "status": 200, "time": 1790429447.109681}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/c7841bcecb8054b7/series.csv", "session": "s01", "status": 401, "time": 1790429447.1161754}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/572f4e3440d77526/series.csv", "session": "s02", "status": 200, "time": 1790429465.637457}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/90881e3893a4754a/series.csv", "session": "s02", "status": 401, "time": 1790429465.6412938}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/90881e3893a4754a/series.csv", "session": "s02", "status": 401, "time": 1790429472.6384382}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/4738eaffa148456f/series.csv", "session": "s03", "status": 200, "time": 1790429498.190653}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/31f1a2d6a1fdfca2/series.csv", "session": "s03", "status": 401, "time": 1790429498.192859}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/575947f99c9922a7/series.csv", "session": "s04", "status": 200, "time": 1790429503.5701976}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/24d5e56c2a208839/series.csv", "session": "s04", "status": 401, "time": 1790429503.5720482}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/ac25b26a705d3d94/series.csv", "session": "s05", "status": 200, "time": 1790429557.583311}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/de231c032ee7de3a/series.csv", "session": "s05", "status": 401, "time": 1790429557.5859623}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/ac25b26a705d3d94/series.csv", "session": "s05", "status": 200, "time": 1790429561.5407329}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/de231c032ee7de3a/series.csv", "session": "s05", "status": 401, "time": 1790429561.5445876}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/b58018c865c07eb3/series.csv", "session": "s06", "status": 200, "time": 1790429576.3635297}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/c6b0d0f22b23c0dc/series.csv", "session": "s06", "status": 401, "time": 1790429576.36481}
