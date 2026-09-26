@@ -1,9 +1,18 @@
 # Stage B plan — energy-pricing-model: testing the Rosso design note (x01–x06, up to gate G1)
 
 **Status (2026-09-26):** in progress.
-- Step 1 is done: `docs/` was committed in b9291cd.
-- Step 2 is done: this plan, `theory-rosso-claims.md` and `toy_v1_spec.md` are committed.
-- Next are the x06 launch check and the six registrations.
+- **Steps 1–5 done:**
+  - `docs/` was committed in b9291cd.
+  - This plan, the theory note and the toy spec were committed in 26abb27.
+  - The x06 launch check passed. It cost $0 and is not registered.
+  - The six PREREGs were registered in 9b75f38 … f787c4a.
+  - The library was committed in 42a75d4.
+- **x01 done:**
+  - `rule-fails-saturated`: e* = 5.85% (CI 5.68–6.04%). Only office at N = 100 fails.
+  - `note-dual-statements` fails: S1 and S2 are contradicted on 100% of eligible instances, and S3
+    misclassifies 12.1%.
+  - Run `20260926T120707Z`, at commit a504ce3.
+- **Next:** x02.
 
 ## Context
 

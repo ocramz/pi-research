@@ -1,0 +1,4 @@
+x01 witness re-check (independent; exact rationals) of 20260926T120707Z
+S1: 4917 verified, 0 not verified
+S2: 5804 verified, 0 not verified
+S3: 607 verified, 0 not verified
