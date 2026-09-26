@@ -1,0 +1,83 @@
+# Smoke config: NOT registered. Real pi, pre-check only, no prompt ($0); results go to the scratchpad.
+[experiment]
+name = "x06-open-data-access"
+seed = 20260926
+smoke = true
+
+[pi]
+pi_version = "0.84.2"
+thinking = "high"
+expected_commands = ["llama", "nb", "nb-python"]
+notebook_commands = ["nb", "nb-python"]
+allowed_tools = ["read", "bash", "edit", "write", "grep", "find", "ls", "nb_cell", "nb_run", "nb_notebook", "nb_env", "web_search_tavily"]
+workdir_root = "~/pi-work/energy-pricing-model/x06"
+
+[sessions]
+count = 1
+concurrent = 1
+stagger_s = 20
+max_seconds = 1200
+budget_usd = 0.30
+search_limit_prompt = 10
+search_hard_cap = 12
+attempts_per_source = 6
+max_followups = 1
+send_prompt = false
+min_valid_sessions = 1
+refutation_sessions = 2
+
+[controls]
+feed_rows = 48
+feed_date = "2026-03-10"
+
+[[datasets]]
+id = "elexon"
+host_suffix = "elexon.co.uk"
+identity = "none"
+step_minutes = 30
+target_date = "2026-03-10"
+min_distinct_times = 46
+
+[[datasets]]
+id = "neso-demand"
+host_suffix = "neso.energy"
+identity = "url_or_field_contains:demand"
+step_minutes = 30
+target_date = "2026-03-10"
+min_distinct_times = 46
+
+[[datasets]]
+id = "neso-ews"
+host_suffix = "neso.energy"
+identity = "url_or_field_contains:forecast"
+step_minutes = 30
+target_date = "2026-03-10"
+min_distinct_times = 46
+
+[[datasets]]
+id = "pvlive"
+host_suffix = "sheffield.ac.uk"
+identity = "none"
+step_minutes = 30
+target_date = "2026-03-10"
+min_distinct_times = 46
+
+[[datasets]]
+id = "om-era5"
+host_suffix = "open-meteo.com"
+identity = "url_excludes:forecast"
+step_minutes = 60
+target_date = "2026-03-10"
+min_distinct_times = 23
+
+[[datasets]]
+id = "om-hfc"
+host_suffix = "open-meteo.com"
+identity = "url_contains:forecast"
+step_minutes = 60
+target_date = "2021-12-15"
+min_distinct_times = 23
+
+[run]
+workers = 3
+wall_cap_s = 3300
