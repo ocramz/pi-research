@@ -1,0 +1,54 @@
+{
+  "command": "get_state",
+  "data": {
+    "autoCompactionEnabled": true,
+    "followUpMode": "one-at-a-time",
+    "isCompacting": false,
+    "isStreaming": false,
+    "messageCount": 0,
+    "model": {
+      "api": "openai-completions",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "compat": {
+        "requiresReasoningContentOnAssistantMessages": true,
+        "sendSessionAffinityHeaders": true,
+        "supportsDeveloperRole": false,
+        "supportsStrictMode": true,
+        "thinkingFormat": "openrouter"
+      },
+      "contextWindow": 1024000,
+      "cost": {
+        "cacheRead": 0.0098,
+        "cacheWrite": 0,
+        "input": 0.049,
+        "output": 0.098
+      },
+      "id": "deepseek/deepseek-v4-flash",
+      "input": [
+        "text"
+      ],
+      "maxTokens": 384000,
+      "name": "DeepSeek: DeepSeek V4 Flash 0423",
+      "provider": "openrouter",
+      "reasoning": true,
+      "thinkingLevelMap": {
+        "high": "high",
+        "low": null,
+        "max": null,
+        "medium": null,
+        "minimal": null,
+        "off": "none",
+        "xhigh": "xhigh"
+      },
+      "type": "chat"
+    },
+    "pendingMessageCount": 0,
+    "sessionFile": "/home/azureuser/pi-work/energy-pricing-model/x06/20260926T135115Z/s06/drive/sessions/2026-09-26T13-54-04-125Z_01a0ddfe-94dd-7c54-9d35-46c435bdbd90.jsonl",
+    "sessionId": "01a0ddfe-94dd-7c54-9d35-46c435bdbd90",
+    "steeringMode": "one-at-a-time",
+    "thinkingLevel": "high"
+  },
+  "id": "cmd-44d46449",
+  "success": true,
+  "type": "response"
+}

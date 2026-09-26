@@ -1,0 +1,35 @@
+HTTP/2 302 
+date: Sat, 26 Sep 2026 13:57:52 GMT
+content-type: text/html; charset=UTF-8
+location: https://83025b28472d6aa2bf5ae59f3724aa78.eu.r2.cloudflarestorage.com/dx-national-grid/national-grid/resources/8a4a771c-3929-4e56-93ad-cdf13219dea5/demanddataupdate_2026.csv?response-content-disposition=attachment%3B%20filename%3Ddemanddataupdate_2026.csv&response-content-type=application%2Foctet-stream&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Expires=604800&X-Amz-Credential=564ecf1b9cb7e605192d2953e7a993b9%2F20260926%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Date=20260926T135752Z&X-Amz-Signature=cb6fc0433edaaf7129d7803a57409a5c23b32e824e5a59a518d01481b09e15b8
+pragma: no-cache
+cache-control: public, max-age=14400
+set-cookie: token=d0767cfc367f0bbf7c8ca996cb53a69dd44fbaf418267ffdbc102e15138dee04; Path=/; secure; HttpOnly
+set-cookie: token-fresh=1; Max-Age=600; Path=/; expires=Sat, 26-Sep-2026 14:07:52 GMT; secure; HttpOnly
+set-cookie: ckan=c7013d3fcc81b580fba65a4506a472aa71d275878457c1e2bdc44d5abfcd5228b9bb0c58; Domain=api.neso.energy; httponly; Path=/; secure
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+server: cloudflare
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1
+referrer-policy: origin
+access-control-allow-origin: *
+expect-ct: max-age=86400, enforce, report-uri='[reportURL]'
+x-permitted-cross-domain-policies: none
+content-security-policy: script-src 'self' 'unsafe-eval' 'unsafe-inline' *.clarity.ms *.hotjar.io *.hotjar.com *.google-analytics.com *.analytics.google.com storage.googleapis.com www.juicer.io *.staging.datopian.com bam.nr-data.net *.cookieyes.com cdn-cookieyes.com  https://code.jquery.com https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.1.266/pdf.worker.js https://platform.twitter.com https://cdn.syndication.twimg.com https://www.neso.energy
+expires: Sat, 26 Sep 2026 17:57:52 GMT
+cf-cache-status: BYPASS
+cf-ray: a412c7ae6a00b8e5-AMS
+
+HTTP/1.1 200 OK
+Date: Sat, 26 Sep 2026 13:57:52 GMT
+Content-Type: application/octet-stream
+Content-Length: 1271129
+Connection: keep-alive
+Accept-Ranges: bytes
+Content-Disposition: attachment; filename=demanddataupdate_2026.csv
+ETag: "9625142fb1bc78edd93683c70d05484e"
+Last-Modified: Sat, 26 Sep 2026 08:20:22 GMT
+Server: cloudflare
+CF-RAY: a412c7babb583fda-AMS
+

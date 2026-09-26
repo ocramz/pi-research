@@ -1,0 +1,19 @@
+HTTP/2 200 
+date: Sat, 26 Sep 2026 13:53:46 GMT
+content-type: text/html; charset=UTF-8
+content-length: 926
+last-modified: Mon, 21 Sep 2026 13:22:23 GMT
+etag: "0x8DF17E35F7C44C2"
+x-ms-request-id: 2373765d-301e-0053-5ebe-4de69d000000
+x-ms-version: 2018-03-28
+x-azure-ref: 20260926T135346Z-15455689584gqx57hC1AMS585s0000003rbg00000000a79n
+x-fd-int-roxy-purgeid: 83427712
+x-cache: TCP_MISS
+x-frame-options: DENY
+x-content-type-options: nosniff
+cache-control: no-cache
+strict-transport-security: max-age=31536000
+cross-origin-opener-policy: same-origin
+permissions-policy: accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), gamepad=()
+accept-ranges: bytes
+

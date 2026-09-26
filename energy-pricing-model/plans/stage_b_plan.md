@@ -33,7 +33,13 @@
   - RL recovers β_marg = 0.278, not 0.33.
   - Deviation 1, made before the run, scopes C6 to the primary grid.
   - Run `20260926T130201Z`, at commit 13f9d09.
-- **Next:** x06, the only paid experiment.
+- **x06 done:**
+  - `access-claims-mostly-confirmed`: 5 of 6 Tier-1 datasets are accessible without a key; NESO
+    embedded forecasts are inconclusive; none is refuted.
+  - The first attempt, `20260926T133032Z`, was `invalid`: every session reached the search cap
+    before reporting. Deviation 1 was then approved by the user and applied.
+  - Run `20260926T135115Z`, at commit 6a588c4. Model cost $0.073.
+- **Next:** the gate G1 report.
 
 ## Context
 

@@ -1,0 +1,16 @@
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Sat, 26 Sep 2026 13:57:27 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 8772
+Connection: keep-alive
+vary: Accept-Encoding, Origin
+content-security-policy: default-src 'self'; base-uri 'self'; connect-src 'self' cdn.jsdelivr.net region1.google-analytics.com; font-src 'self' cdnjs.cloudflare.com fonts.gstatic.com; form-action 'self'; frame-ancestors 'self'; frame-src 'self' www.google.com docs.google.com; img-src 'self' data: cdnjs.cloudflare.com cdn.redoc.ly/redoc/ region1.google-analytics.com www.googletagmanager.com fastapi.tiangolo.com; script-src 'self' 'sha256-QOOQu4W1oxGqd2nbXbxiA1Di6OHQOLQD+o+G9oWL8YY=' 'sha256-zjvrMPcEFfLyaOtQM92mYmGd7h3/F5JD6Fl5ucci7sA=' 'sha256-o4krlXQcHV0QKlo1NNYDagsSVgMlem0QkGl26DfrctU=' 'sha256-k0DsPn+D8Rra9fkHUurfNnfw1TN3XNcR5aW2VvBsLtE=' cdnjs.cloudflare.com cdn.jsdelivr.net code.jquery.com www.google.com www.googletagmanager.com www.gstatic.com region1.google-analytics.com; style-src 'self' 'sha256-QMIg+bpjm3JdElJ388KYke01izlUW0UoNOeKjpMxdgc=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-m6OsjZ+ZE+8plS5r0wBVuIy/qbXuHEw//v/OhLyy9Xg=' cdnjs.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com; worker-src 'self' blob:
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+referrer-policy: strict-origin-when-cross-origin
+cache-control: no-cache, no-store, must-revalidate
+pragma: no-cache
+expires: 0
+Strict-Transport-Security: max-age=31556926; includeSubDomains
+

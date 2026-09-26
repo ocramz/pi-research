@@ -1,0 +1,20 @@
+HTTP/2 404 
+date: Sat, 26 Sep 2026 13:52:50 GMT
+content-type: application/json;charset=utf-8
+content-length: 158
+pragma: no-cache
+cache-control: no-cache
+set-cookie: ckan=39a1266901aaf5d0012e866ec7e11569e93fcc1269cbaba458e846b59fcf30a77e146ae5; Domain=api.neso.energy; httponly; Path=/; secure
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+server: cloudflare
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1
+referrer-policy: origin
+access-control-allow-origin: *
+expect-ct: max-age=86400, enforce, report-uri='[reportURL]'
+x-permitted-cross-domain-policies: none
+content-security-policy: script-src 'self' 'unsafe-eval' 'unsafe-inline' *.clarity.ms *.hotjar.io *.hotjar.com *.google-analytics.com *.analytics.google.com storage.googleapis.com www.juicer.io *.staging.datopian.com bam.nr-data.net *.cookieyes.com cdn-cookieyes.com  https://code.jquery.com https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://www.google-analytics.com https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.1.266/pdf.worker.js https://platform.twitter.com https://cdn.syndication.twimg.com https://www.neso.energy
+cf-cache-status: DYNAMIC
+cf-ray: a412c059ac9bffef-AMS
+
