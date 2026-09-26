@@ -89,3 +89,9 @@ def test_golden_toy_v1():
         assert got["books"][k] == pytest.approx(v, rel=1e-12)
     for k, v in want["prospects"].items():
         assert got["prospects"][k] == pytest.approx(v, rel=1e-12)
+
+
+def test_calibration_of_a_noiseless_config_is_exact_not_a_z_test():
+    from epmlib.toy import calibration, calibration_ok
+    cal = calibration(ToyEngine(BASE.with_(s_c=0.0, s_w=0.0, s_i=0.0, s_cm=0.0), 4), sites=3)
+    assert calibration_ok(cal) and all(v["z"] == 0.0 for v in cal.values())

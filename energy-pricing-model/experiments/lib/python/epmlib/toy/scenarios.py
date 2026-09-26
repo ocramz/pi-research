@@ -142,7 +142,12 @@ def calibration(engine: ToyEngine, sites: int = 30) -> dict[str, dict[str, float
     def stat(per_scenario: np.ndarray, target: float) -> dict[str, float]:
         mean = float(per_scenario.mean())
         se = float(per_scenario.std(ddof=1) / np.sqrt(len(per_scenario)))
-        return {"mean": mean, "se": se, "target": target, "z": (mean - target) / se if se > 0 else 0.0}
+        scale = max(abs(target), 1.0)
+        if se <= 1e-12 * scale:  # no noise (e.g. the zero-noise control): equal up to rounding
+            z = 0.0 if abs(mean - target) <= 1e-9 * scale else float("inf")
+        else:
+            z = (mean - target) / se
+        return {"mean": mean, "se": se, "target": target, "z": z}
 
     solar_cf = engine.solar_per_mw.sum(axis=1) / HOURS_PER_YEAR
     wind_cf = engine.wind_per_mw.sum(axis=1) / HOURS_PER_YEAR
