@@ -1,0 +1,55 @@
+[experiment]
+name = "x04-price-and-jitter-cost"
+seed = 20260926
+
+[note]
+commodity = 78.0
+network = 34.0
+levies = 45.0
+nu_bar = 35.0
+matched_share = 0.276
+phi = 0.5
+sigma_cost = 6.0
+beta = 0.33
+p_ref = 162.0
+volume_mwh = 250.0
+gamma = 0.6
+jitter_sigmas = [1.0, 2.0, 4.0]
+jitter_loss_percent = [1.0, 4.0, 18.1]
+jitter_tolerance_pp = [0.15, 0.3, 0.6]
+
+[note.table_7_4.unconstrained]
+price = 159.74
+win_percent = 67.8
+markup = 9.40
+margin_gbp = 1593.0
+
+[note.table_7_4.pass_through]
+price = 154.19
+win_percent = 92.9
+markup = 3.85
+margin_gbp = 894.0
+
+[note.table_7_4.no_match]
+price = 164.39
+win_percent = 31.2
+margin_gbp = 343.0
+
+[analysis]
+sigmas = [0.25, 0.5, 1.0, 2.0, 4.0]
+exact_tolerance = { price = 0.005, markup = 0.005, win_pp = 0.05, margin_gbp = 0.5 }
+rounding_tolerance = { price = 0.02, markup = 0.02, win_pp = 0.1, margin_rel = 0.005 }
+statics_c_hat = [130.0, 135.0, 140.0, 145.0, 150.0, 155.0, 160.0]
+statics_beta = [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
+
+[checker]
+mc_draws = 10000000
+gh_nodes = 200
+grid_step = 0.0001
+fd_step = 0.001
+statics_fd_step = 0.000001
+se_multiple = 4.0
+
+[run]
+workers = 1
+wall_cap_s = 600

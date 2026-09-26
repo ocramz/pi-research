@@ -1,0 +1,1 @@
+evidence.json is missing or does not match the required shape. Problems found: ${errors}. Write a corrected evidence.json with one entry for each of the 8 sources. Do not download anything again unless an entry needs it. Then stop.

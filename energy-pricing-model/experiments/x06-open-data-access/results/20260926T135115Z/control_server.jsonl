@@ -1,0 +1,12 @@
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/572f4e3440d77526/series.csv", "session": "s02", "status": 200, "time": 1790430704.1104152}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/90881e3893a4754a/series.csv", "session": "s02", "status": 401, "time": 1790430704.1130452}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/127f04c2a8aaafbc/series.csv", "session": "s01", "status": 200, "time": 1790430704.6525054}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/c7841bcecb8054b7/series.csv", "session": "s01", "status": 401, "time": 1790430704.6550152}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/4738eaffa148456f/series.csv", "session": "s03", "status": 200, "time": 1790430729.713184}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/31f1a2d6a1fdfca2/series.csv", "session": "s03", "status": 401, "time": 1790430729.7155375}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/575947f99c9922a7/series.csv", "session": "s04", "status": 200, "time": 1790430763.2236755}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/24d5e56c2a208839/series.csv", "session": "s04", "status": 401, "time": 1790430763.2257297}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/ac25b26a705d3d94/series.csv", "session": "s05", "status": 200, "time": 1790430845.1713572}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/de231c032ee7de3a/series.csv", "session": "s05", "status": 401, "time": 1790430845.1741621}
+{"authorization": false, "feed": "a", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/b58018c865c07eb3/series.csv", "session": "s06", "status": 200, "time": 1790430852.9556656}
+{"authorization": false, "feed": "b", "header_names": ["Accept", "Host", "User-Agent"], "path": "/f/c6b0d0f22b23c0dc/series.csv", "session": "s06", "status": 401, "time": 1790430852.9566495}

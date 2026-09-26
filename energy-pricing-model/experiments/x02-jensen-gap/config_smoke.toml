@@ -1,0 +1,40 @@
+# Smoke config: NOT registered. For checking the pipeline end to end; results go to the scratchpad.
+[experiment]
+name = "x02-jensen-gap"
+seed = 20260926
+smoke = true
+
+[toy]
+spec = "plans/toy_v1_spec.md@26abb27"
+scenarios = 12
+books = [4, 5, 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 28, 30, 32, 35, 38, 40, 45, 50, 60, 70, 80, 100, 125, 160, 200]
+
+[analysis]
+balance_band = [0.75, 1.33]
+class_probability = 0.8
+local_peak_fraction = 0.8
+bootstrap = 100
+secondary_books = [10, 20, 30, 40, 60, 100]
+magnitude_books = [20, 30, 40, 60]
+note_magnitudes_percent = [10.6, 7.3, 4.9, 2.9]
+note_range_percent = [5.0, 11.0]
+theta_sweep = [0.0, 0.25, 0.5, 0.75, 1.0]
+phantom_book = 40
+note_phantom_gbp = 10000.0
+finite_s_books = [20, 30, 40, 60]
+finite_s_abs_pp = 0.5
+finite_s_rel = 0.15
+invariance_se = 4.0
+
+[checker]
+gaussian_mu_over_d = [0.5, 0.8, 1.0, 1.25, 2.0]
+gaussian_sd_over_d = 0.3
+gaussian_scenarios = 12
+gaussian_halfhours = 1000
+replications = 20
+se_multiple = 4.0
+
+[run]
+workers = 2
+config_cap_s = 600
+wall_cap_s = 3000

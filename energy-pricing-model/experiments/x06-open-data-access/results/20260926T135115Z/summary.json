@@ -1,0 +1,646 @@
+{
+  "action": "G1: options for the inconclusive datasets",
+  "c2": {
+    "code_tree_clean": true,
+    "main_tree_only_run_dir_added": true,
+    "no_repo_paths_in_tool_args": true,
+    "ok": true,
+    "settings_unchanged": true,
+    "submodule_unchanged": true,
+    "unexpected_main_changes": []
+  },
+  "class": "access-claims-mostly-confirmed",
+  "cost": {
+    "median": 0.008140869800000002,
+    "per_session": [
+      0.0034933962,
+      0.008140869800000002,
+      0.007422951199999999,
+      0.0096741484,
+      0.0058050986,
+      0.038131359000000004
+    ],
+    "total": 0.07266782320000001
+  },
+  "datasets": {
+    "elexon": {
+      "refuting_sessions": [],
+      "verdict": "accessible",
+      "witness_sessions": [
+        "s06"
+      ]
+    },
+    "neso-demand": {
+      "refuting_sessions": [],
+      "verdict": "accessible",
+      "witness_sessions": [
+        "s06"
+      ]
+    },
+    "neso-ews": {
+      "refuting_sessions": [],
+      "verdict": "inconclusive",
+      "witness_sessions": []
+    },
+    "om-era5": {
+      "refuting_sessions": [],
+      "verdict": "accessible",
+      "witness_sessions": [
+        "s01",
+        "s02",
+        "s03",
+        "s04",
+        "s05",
+        "s06"
+      ]
+    },
+    "om-hfc": {
+      "refuting_sessions": [],
+      "verdict": "accessible",
+      "witness_sessions": [
+        "s01",
+        "s02",
+        "s03",
+        "s05"
+      ]
+    },
+    "pvlive": {
+      "refuting_sessions": [],
+      "verdict": "accessible",
+      "witness_sessions": [
+        "s05"
+      ]
+    }
+  },
+  "experiment": "x06-open-data-access",
+  "n_accessible": 5,
+  "n_refuted": 0,
+  "pi_version": "0.84.2",
+  "secrets_left_after_redaction": [],
+  "sessions": {
+    "s01": {
+      "C1": true,
+      "C3": false,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": null,
+          "refuted": false,
+          "witness": false
+        },
+        "feed-a": {
+          "agent": null,
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": null,
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": null,
+          "refuted": false,
+          "witness": false
+        },
+        "neso-ews": {
+          "agent": null,
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": null,
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": null,
+          "refuted": false,
+          "witness": true
+        },
+        "pvlive": {
+          "agent": null,
+          "refuted": false,
+          "witness": false
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 14,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": false,
+        "ok": false,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 14,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily"
+      ],
+      "vacuous_web_search": false
+    },
+    "s02": {
+      "C1": true,
+      "C3": true,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "feed-a": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": "key_required",
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "neso-ews": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "pvlive": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 12,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily",
+          "write"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": true,
+        "ok": true,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 12,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "s03": {
+      "C1": true,
+      "C3": true,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": "failed",
+          "refuted": false,
+          "witness": false
+        },
+        "feed-a": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": "key_required",
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": "failed",
+          "refuted": false,
+          "witness": false
+        },
+        "neso-ews": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "pvlive": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 13,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily",
+          "write"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": true,
+        "ok": true,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 13,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "s04": {
+      "C1": true,
+      "C3": true,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": "failed",
+          "refuted": false,
+          "witness": false
+        },
+        "feed-a": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": "key_required",
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "neso-ews": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "pvlive": {
+          "agent": "failed",
+          "refuted": false,
+          "witness": false
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 12,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily",
+          "write"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": true,
+        "ok": true,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 12,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "s05": {
+      "C1": true,
+      "C3": true,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "feed-a": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": "key_required",
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "neso-ews": {
+          "agent": "not_tried",
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "pvlive": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 12,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily",
+          "write"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": true,
+        "ok": true,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 12,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "s06": {
+      "C1": true,
+      "C3": true,
+      "C4": true,
+      "accuracy": {
+        "elexon": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-a": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "feed-b": {
+          "agent": "key_required",
+          "refuted": true,
+          "witness": false
+        },
+        "neso-demand": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "neso-ews": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": false
+        },
+        "om-era5": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": true
+        },
+        "om-hfc": {
+          "agent": "retrieved",
+          "refuted": false,
+          "witness": false
+        },
+        "pvlive": {
+          "agent": "not_found",
+          "refuted": false,
+          "witness": false
+        }
+      },
+      "c1_detail": {
+        "allowed_tools_only": true,
+        "commands": [
+          "llama",
+          "nb",
+          "nb-python"
+        ],
+        "commands_exact": true,
+        "model": true,
+        "no_extension_error_events": true,
+        "no_extension_error_stderr": true,
+        "no_stories_db": true,
+        "notebook_base_dir": true,
+        "ok": true,
+        "pi_version": true,
+        "searches": 13,
+        "thinking": true,
+        "tools_used": [
+          "bash",
+          "read",
+          "web_search_tavily",
+          "write"
+        ],
+        "vacuous_web_search": false
+      },
+      "c3": {
+        "agent_retrieved": true,
+        "ok": true,
+        "server_200": true,
+        "witness_sha": true
+      },
+      "c4": {
+        "agent_not_retrieved": true,
+        "no_authorization": true,
+        "no_witness": true,
+        "ok": true,
+        "server_401": true
+      },
+      "searches": 13,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    }
+  },
+  "sessions_run": 6,
+  "valid": true,
+  "validity": {
+    "C1_all_sessions": true,
+    "C2": true,
+    "feed_b_witness": false,
+    "sessions_passing_C3_C4": 5
+  }
+}

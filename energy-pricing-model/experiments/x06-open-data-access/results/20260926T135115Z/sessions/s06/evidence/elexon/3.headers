@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Sat, 26 Sep 2026 13:56:54 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-store, must-revalidate, no-cache
+Pragma: no-cache
+Expires: Sat, 26 Sep 2026 13:56:54 GMT
+Request-Context: appId=cid-v1:56a240eb-4f9f-4e6e-88ae-973185a49356
+Strict-Transport-Security: max-age=31536000
+

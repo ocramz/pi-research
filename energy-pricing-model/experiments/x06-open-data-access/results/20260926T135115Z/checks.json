@@ -1,0 +1,1900 @@
+{
+  "s01": {
+    "accuracy": {
+      "elexon": {
+        "agent": null,
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "agent": null,
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": null,
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": null,
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "agent": null,
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": null,
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": null,
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "agent": null,
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 14,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": false,
+      "ok": false,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.0034933962,
+    "datasets": {
+      "elexon": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": null,
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "empty",
+            "http_code": 0,
+            "n": 1,
+            "url": "https://api.bmrs.elexon.co.uk/balancing/settlement/system-prices/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "31f36723b3c205cd3937fd47f0f91ac3ff63cbdc9ad590125abc3dc34a13302b",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/127f04c2a8aaafbc/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/c7841bcecb8054b7/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "7378b0667fbe6f186ec7a64f8f210db4317204ab0da4f2c71fafd3c911f7f292",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "2f852ef45bc4cdfe90efeb8465e874016be883de02a0304fa81dc67549cf4463",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=51.51&longitude=-0.13&start_date=2021-12-15&end_date=2021-12-15&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 5
+  },
+  "s02": {
+    "accuracy": {
+      "elexon": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": "key_required",
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 12,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": true,
+      "ok": true,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.008140869800000002,
+    "datasets": {
+      "elexon": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "0cf46b29802caac8dcb299542cc29907621f9dc6a84d42904d1834b26334af54",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/572f4e3440d77526/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/90881e3893a4754a/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "329152c063989fd2a10b2429202bf5206ed332f123aeb3182b72b22aa0e6f145",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "314f55c814263ea78f4a5c00738aa09bb78c4556859b7f3afd3a1142da4a0c73",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=51.51&longitude=-0.13&start_date=2021-12-15&end_date=2021-12-15&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 4
+  },
+  "s03": {
+    "accuracy": {
+      "elexon": {
+        "agent": "failed",
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": "key_required",
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": "failed",
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 13,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": true,
+      "ok": true,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.007422951199999999,
+    "datasets": {
+      "elexon": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "fa453db6c8bdbc8e647c65df091e319aa375cf5ed7ad919ef87efe09d20db21d",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "unknown",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://bmrs.elexon.co.uk/api/datasets/FUELHH/2026-03-10?format=json",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "716ac97ef3388395f08486c2b769b8c43760e41799f9364d6ca210162aaa6115",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/4738eaffa148456f/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/31f1a2d6a1fdfca2/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "4b110c05998850bcd1caf39a2e256baf63edd49195d7c4c85d6c3c275711c2c8",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 404,
+            "n": 1,
+            "url": "https://api.neso.energy/api/3/action/package_show?id=historic_demand_data_2026",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "5c26efa984d18da0ac158b59fb3db1597511d1be9bb41ebb5b5c5f146129084a",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/era5?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "fa20327b26a6dc65fd3f40a10be108d400322f33ef47c540bae52dd2516f0a4d",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=51.51&longitude=-0.13&start_date=2021-12-15&end_date=2021-12-15&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 6
+  },
+  "s04": {
+    "accuracy": {
+      "elexon": {
+        "agent": "failed",
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": "key_required",
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "pvlive": {
+        "agent": "failed",
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 12,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": true,
+      "ok": true,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.0096741484,
+    "datasets": {
+      "elexon": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 404,
+            "n": 1,
+            "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1770?from=2026-03-10&to=2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "fa453db6c8bdbc8e647c65df091e319aa375cf5ed7ad919ef87efe09d20db21d",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "unknown",
+            "http_code": 200,
+            "n": 2,
+            "url": "https://bmrs.elexon.co.uk/api/datasets/B1770?settlementDate=2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "d5142d1c2317c385cdd09be31e49b6b76048b2333bd1b6c167c83e45beddc3c0",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/575947f99c9922a7/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/24d5e56c2a208839/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "19d8cf7288ef8758997f69c6e7b6ddb2782c0f6fb61f36eb46aad0baf4b51f93",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "pvlive": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 1,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/pvlive/gsp?entity_id=0&extra_fields=generation_mw&period=halfhourly&data_format=json&datetime=2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 2,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v4/gsp/?entity_id=0&start=2026-03-10T00:00:00Z&end=2026-03-10T23:30:00Z",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 7
+  },
+  "s05": {
+    "accuracy": {
+      "elexon": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": "key_required",
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "agent": "not_tried",
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 12,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": true,
+      "ok": true,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.0058050986,
+    "datasets": {
+      "elexon": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "74dffa07f701c59b8854f9fef229fbd74bb810e109c2148fcea043de06c850e4",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/ac25b26a705d3d94/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/de231c032ee7de3a/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "neso-ews": {
+        "attempts": [],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "276aa5ca21ffff9a10dbb816e1e13ef339c8398ec05d1fd206ea2329ea19eb65",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "7b7d144ebce7b92ea2f6f594c81061dd537d4d4ff62aeae110022ced79c8cd2e",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://historical-forecast-api.open-meteo.com/v1/forecast?latitude=51.51&longitude=-0.13&start_date=2021-12-15&end_date=2021-12-15&hourly=temperature_2m",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "pvlive": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "datetime_gmt",
+              "step": 30.0
+            },
+            "body_sha256": "a2319dc6b60d2c6c875082fc7609ae711f9cd22b7c7cf5434900a6f7cd26aaec",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v4/pes/0?start=2026-03-10T00:00:00Z&end=2026-03-10T23:59:00Z",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 5
+  },
+  "s06": {
+    "accuracy": {
+      "elexon": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-a": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "agent": "key_required",
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "neso-ews": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "agent": "retrieved",
+        "refuted": false,
+        "witness": false
+      },
+      "pvlive": {
+        "agent": "not_found",
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "c1": {
+      "allowed_tools_only": true,
+      "commands": [
+        "llama",
+        "nb",
+        "nb-python"
+      ],
+      "commands_exact": true,
+      "model": true,
+      "no_extension_error_events": true,
+      "no_extension_error_stderr": true,
+      "no_stories_db": true,
+      "notebook_base_dir": true,
+      "ok": true,
+      "pi_version": true,
+      "searches": 13,
+      "thinking": true,
+      "tools_used": [
+        "bash",
+        "read",
+        "web_search_tavily",
+        "write"
+      ],
+      "vacuous_web_search": false
+    },
+    "c3": {
+      "agent_retrieved": true,
+      "ok": true,
+      "server_200": true,
+      "witness_sha": true
+    },
+    "c4": {
+      "agent_not_retrieved": true,
+      "no_authorization": true,
+      "no_witness": true,
+      "ok": true,
+      "server_401": true
+    },
+    "cost_usd": 0.038131359000000004,
+    "datasets": {
+      "elexon": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": null,
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "empty",
+            "http_code": 0,
+            "n": 1,
+            "url": "https://api.data.elexon.co.uk/datasets/B1610?start=2026-03-10&end=2026-03-10&format=json",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "fa453db6c8bdbc8e647c65df091e319aa375cf5ed7ad919ef87efe09d20db21d",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "unknown",
+            "http_code": 200,
+            "n": 2,
+            "url": "https://bmrs.elexon.co.uk/datasets/B1610?settlementDate=2026-03-10&settlementPeriod=1&format=json",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 1,
+              "field": "halfHourEndTime",
+              "step": null
+            },
+            "body_sha256": "2fb41de356fa754946e442500feafa2b3774d156c2503ae47407c7b01986ec5c",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 3,
+            "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610?settlementDate=2026-03-10&settlementPeriod=1",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 1,
+              "field": "startTime",
+              "step": null
+            },
+            "body_sha256": "cf9c08393e0d212a435fd0d91e9b0eef78a26b877d0a92b7ed7e0bc5dc1d48dc",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 4,
+            "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/MID?from=2026-03-10&to=2026-03-10&format=json",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "startTime",
+              "step": 30.0
+            },
+            "body_sha256": "4f5cbd305afd426ebef65b7735856424b1100fbc98dba116cfec73ba84034eaf",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 5,
+            "url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/MID?from=2026-03-10&to=2026-03-10&settlementPeriodFrom=1&settlementPeriodTo=50&format=json",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-a": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "time",
+              "step": 30.0
+            },
+            "body_sha256": "e069656f0273464c9367d149a7df815e1415332ebb1c7b2b303623d6e9346403",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/b58018c865c07eb3/series.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "feed-b": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "2d4e266b5dae2738a1929d5478df160a1626d43e9fbc83ff8015bc203482a326",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 401,
+            "n": 1,
+            "url": "http://127.0.0.1:33875/f/c6b0d0f22b23c0dc/series.csv",
+            "verdict": "refutes_keyless",
+            "waf": false
+          }
+        ],
+        "refuted": true,
+        "witness": false
+      },
+      "neso-demand": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "8ef3a3bcb4f873a08d0336dd5d65982584dac08309d4f0a55c79a2b37637be34",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://api.neso.energy/api/3/action/package_show?id=historic-demand-data",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 48,
+              "field": "SETTLEMENT_DATE+SETTLEMENT_PERIOD",
+              "step": 30.0
+            },
+            "body_sha256": "1905a05bb307f85e6c693d350a3ecfb500257f1580ff688929fd5691e0ac84a9",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 200,
+            "n": 2,
+            "url": "https://api.neso.energy/dataset/8f2fe0af-871c-488d-8bad-960426f24601/resource/8a4a771c-3929-4e56-93ad-cdf13219dea5/download/demanddata_2026.csv",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "neso-ews": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "de2cffc48af72017f076586b5e6839d011706ec271b422a3b3ec4d1d5f056e6c",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://api.neso.energy/api/3/action/package_show?id=embedded-wind-and-solar-forecasts",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": null,
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "empty",
+            "http_code": 200,
+            "n": 2,
+            "url": "https://api.neso.energy/dataset/91c0c70e-0ef5-4116-b6fa-7ad084b5e0e8/resource/fc13df13-2dad-4a1c-b9e3-4569efba4955/download/embedded_solar_and_wind_forecast_2026.csv",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "om-era5": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "147884a5b2a27ee5e4e7ae92e8f5042344a3ab141291fe0b6451abd835fb105e",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": true
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2026-03-10&end_date=2026-03-10&hourly=temperature_2m&timezone=UTC",
+            "verdict": "witness",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": true
+      },
+      "om-hfc": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 24,
+              "field": "time",
+              "step": 60.0
+            },
+            "body_sha256": "b8ffb820937bfccfd2f30e748117eb9851201e16a2f09d07c392c61b88a8c781",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": true,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": true,
+              "8_identity": false
+            },
+            "format": "json",
+            "http_code": 200,
+            "n": 1,
+            "url": "https://archive-api.open-meteo.com/v1/archive?latitude=51.51&longitude=-0.13&start_date=2021-12-15&end_date=2021-12-15&hourly=temperature_2m&timezone=UTC",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      },
+      "pvlive": {
+        "attempts": [
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 1,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/pvlive/gbp/2026-03-10/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 2,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/gbp/2026-03-10/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 3,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/gb/2026-03-10/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 4,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/gbp/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 5,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/v1/gbp/2026-03-10/2026-03-10",
+            "verdict": "neither",
+            "waf": false
+          },
+          {
+            "best_series": {
+              "distinct": 0,
+              "field": null,
+              "step": null
+            },
+            "body_sha256": "27923466df91752016389432a10981d44af7bf9e0482372a2b4b4fb459179f09",
+            "checks": {
+              "1_writeout": true,
+              "2_fetch_sh_unchanged": true,
+              "3_http_200": false,
+              "4_host": true,
+              "5_no_credentials": true,
+              "6_size": true,
+              "7_times": false,
+              "8_identity": true
+            },
+            "format": "csv",
+            "http_code": 404,
+            "n": 6,
+            "url": "https://api.solar.sheffield.ac.uk/pvlive/api/v1/gb/latest",
+            "verdict": "neither",
+            "waf": false
+          }
+        ],
+        "refuted": false,
+        "witness": false
+      }
+    },
+    "fetch_sh_unchanged": true,
+    "writeouts": 19
+  }
+}

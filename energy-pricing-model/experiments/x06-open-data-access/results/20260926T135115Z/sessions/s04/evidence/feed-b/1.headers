@@ -1,0 +1,7 @@
+HTTP/1.0 401 Unauthorized
+Server: BaseHTTP/0.6 Python/3.12.14
+Date: Sat, 26 Sep 2026 13:52:43 GMT
+Content-Type: application/json
+WWW-Authenticate: Bearer realm="feed-b"
+Content-Length: 30
+

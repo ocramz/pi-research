@@ -1,0 +1,28 @@
+{
+  "command": "get_session_stats",
+  "data": {
+    "assistantMessages": 19,
+    "contextUsage": {
+      "contextWindow": 1024000,
+      "percent": 4.7769531249999995,
+      "tokens": 48916
+    },
+    "cost": 0.0058637516,
+    "sessionFile": "/home/azureuser/pi-work/energy-pricing-model/x06/20260926T133032Z/s05/drive/sessions/2026-09-26T13-32-29-075Z_01a0ddea-d213-7071-8767-270ad5a79cb7.jsonl",
+    "sessionId": "01a0ddea-d213-7071-8767-270ad5a79cb7",
+    "tokens": {
+      "cacheRead": 321792,
+      "cacheWrite": 0,
+      "input": 49206,
+      "output": 3052,
+      "total": 374050
+    },
+    "toolCalls": 28,
+    "toolResults": 28,
+    "totalMessages": 48,
+    "userMessages": 1
+  },
+  "id": "cmd-07417ec6",
+  "success": true,
+  "type": "response"
+}

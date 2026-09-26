@@ -1,0 +1,13 @@
+{
+  "command": "get_available_thinking_levels",
+  "data": {
+    "levels": [
+      "off",
+      "high",
+      "xhigh"
+    ]
+  },
+  "id": "cmd-ae17719a",
+  "success": true,
+  "type": "response"
+}

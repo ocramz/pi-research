@@ -1,0 +1,45 @@
+{
+  "command": "get_commands",
+  "data": {
+    "commands": [
+      {
+        "description": "Pin which python the current notebook uses: /nb-python /path/to/venv (or .../bin/python). Restarts the kernel \u2014 python state is lost.",
+        "name": "nb-python",
+        "source": "extension",
+        "sourceInfo": {
+          "baseDir": "/home/azureuser/pi-research/pi-agent-experiments/pi-notebook-py",
+          "origin": "package",
+          "path": "/home/azureuser/pi-research/pi-agent-experiments/pi-notebook-py/extensions/index.ts",
+          "scope": "user",
+          "source": "../../pi-research/pi-agent-experiments/pi-notebook-py"
+        }
+      },
+      {
+        "description": "Poke the notebook kernel: /nb lists cells, /nb add <src>, /nb run <id>, /nb run-all, /nb read <id>, /nb save <path>, /nb open <path>, /nb notebooks, /nb new <name>, /nb use <name>, /nb drop-venv <name>, /nb <expr> evaluates.",
+        "name": "nb",
+        "source": "extension",
+        "sourceInfo": {
+          "baseDir": "/home/azureuser/pi-research/pi-agent-experiments/pi-notebook-py",
+          "origin": "package",
+          "path": "/home/azureuser/pi-research/pi-agent-experiments/pi-notebook-py/extensions/index.ts",
+          "scope": "user",
+          "source": "../../pi-research/pi-agent-experiments/pi-notebook-py"
+        }
+      },
+      {
+        "description": "Manage llama.cpp router models",
+        "name": "llama",
+        "source": "extension",
+        "sourceInfo": {
+          "origin": "top-level",
+          "path": "<inline:llama.cpp>",
+          "scope": "temporary",
+          "source": "inline"
+        }
+      }
+    ]
+  },
+  "id": "cmd-1dd62ba2",
+  "success": true,
+  "type": "response"
+}

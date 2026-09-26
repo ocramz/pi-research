@@ -1,0 +1,69 @@
+{
+  "feeds": {
+    "s01": [
+      {
+        "sha256": "31f36723b3c205cd3937fd47f0f91ac3ff63cbdc9ad590125abc3dc34a13302b",
+        "token": "127f04c2a8aaafbc"
+      },
+      {
+        "token": "c7841bcecb8054b7"
+      }
+    ],
+    "s02": [
+      {
+        "sha256": "0cf46b29802caac8dcb299542cc29907621f9dc6a84d42904d1834b26334af54",
+        "token": "572f4e3440d77526"
+      },
+      {
+        "token": "90881e3893a4754a"
+      }
+    ],
+    "s03": [
+      {
+        "sha256": "716ac97ef3388395f08486c2b769b8c43760e41799f9364d6ca210162aaa6115",
+        "token": "4738eaffa148456f"
+      },
+      {
+        "token": "31f1a2d6a1fdfca2"
+      }
+    ],
+    "s04": [
+      {
+        "sha256": "d5142d1c2317c385cdd09be31e49b6b76048b2333bd1b6c167c83e45beddc3c0",
+        "token": "575947f99c9922a7"
+      },
+      {
+        "token": "24d5e56c2a208839"
+      }
+    ],
+    "s05": [
+      {
+        "sha256": "74dffa07f701c59b8854f9fef229fbd74bb810e109c2148fcea043de06c850e4",
+        "token": "ac25b26a705d3d94"
+      },
+      {
+        "token": "de231c032ee7de3a"
+      }
+    ],
+    "s06": [
+      {
+        "sha256": "e069656f0273464c9367d149a7df815e1415332ebb1c7b2b303623d6e9346403",
+        "token": "b58018c865c07eb3"
+      },
+      {
+        "token": "c6b0d0f22b23c0dc"
+      }
+    ]
+  },
+  "fetch_sh_sha256": "65207c50d09f60623dd2bb1f68c54ed12fe7d9ea52461c0ac3b0251ded021a3b",
+  "models_store_sha256": "2e98f9b053863e21f58e28c346890d1156c97fdf07fa530422857c6c0aaf2e02",
+  "pi_version": "0.84.2",
+  "pins": {
+    "DEFAULT_PI_MODEL": "deepseek/deepseek-v4-flash",
+    "DEFAULT_PI_PROVIDER": "openrouter",
+    "DEFAULT_PI_VERSION": "0.84.2"
+  },
+  "settings_sha256": "e249d02f5a98e71b9fe4a6d2a68e174f62fd57941c35203ed65a7732bcbeaa55",
+  "submodule_commit": "cc9210a64c46e51c730d43733e13d35ee1465df0",
+  "utc": "2026-09-26T13:58:52.345062+00:00"
+}

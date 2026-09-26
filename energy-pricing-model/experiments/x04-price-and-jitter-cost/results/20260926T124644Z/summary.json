@@ -1,0 +1,324 @@
+{
+  "action": "run x05; G1 records the correct attribution, and that symmetric jitter at a binding cap breaks the cap on half of all quotes",
+  "candidates": {
+    "cap-respecting at p*": {
+      "losses_percent": [
+        1.7036381625856856,
+        6.403513220624757,
+        21.79043862360095
+      ],
+      "match": false
+    },
+    "cap-respecting at p_cap": {
+      "losses_percent": [
+        19.562100094572187,
+        40.20370017125352,
+        83.05476442368817
+      ],
+      "match": false
+    },
+    "symmetric at p*": {
+      "losses_percent": [
+        1.7093657411050955,
+        6.372917956801826,
+        20.653704802446203
+      ],
+      "match": false
+    },
+    "symmetric at p_cap": {
+      "losses_percent": [
+        0.9582115471176822,
+        4.053174638098255,
+        17.998351701513073
+      ],
+      "match": true
+    },
+    "symmetric at the no-match price": {
+      "losses_percent": [
+        3.7259465039716666,
+        14.573084756186194,
+        52.777589261516944
+      ],
+      "match": false
+    }
+  },
+  "cap_respecting_first_order": {
+    "closed_form_slope": 0.1878191453237069,
+    "loss_at_1": 0.19562100094572188,
+    "ratio": {
+      "0.25": 0.19005398401690066,
+      "0.5": 0.19208662782542119,
+      "1.0": 0.19562100094572188
+    }
+  },
+  "class": "misattributed-cap",
+  "controls": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true
+  },
+  "controls_pass": true,
+  "envelope_second_order": {
+    "closed_form": 0.017542035802034606,
+    "ratio": {
+      "0.25": 0.01751297019370668,
+      "0.5": 0.017426630254093745
+    }
+  },
+  "experiment": "x04-price-and-jitter-cost",
+  "gamma_binding": 0.026296289987416368,
+  "margin_ratio": {
+    "pass_through_over_no_match": 2.6172605864314873,
+    "unconstrained_over_no_match": 4.6481671259397075,
+    "win_percent": {
+      "no_match": 31.160087692723692,
+      "pass_through": 92.9082479545656,
+      "unconstrained": 67.78322166752139
+    }
+  },
+  "optimum": {
+    "C1": true,
+    "C1_detail": {
+      "no_match": {
+        "close": true,
+        "log_concave": true,
+        "p_bisection": 164.40195655214774,
+        "p_grid": 164.402
+      },
+      "unconstrained": {
+        "close": true,
+        "log_concave": true,
+        "p_bisection": 159.74597783872156,
+        "p_grid": 159.746
+      }
+    },
+    "C3": true,
+    "C3_detail": {
+      "closed_form": -55.92115787570515,
+      "fd": -55.921156899785274
+    }
+  },
+  "prices": {
+    "no_match": {
+      "c_hat": 160.0,
+      "price": 164.40195655214774
+    },
+    "pass_through": {
+      "c_hat": 150.34,
+      "price": 154.204
+    },
+    "unconstrained": {
+      "c_hat": 150.34,
+      "price": 159.74597783872156
+    }
+  },
+  "quadratic_scaling": {
+    "pass_through": {
+      "2.0": 4.229937168144424,
+      "4.0": 18.78327573452067
+    },
+    "unconstrained": {
+      "2.0": 3.728235452222045,
+      "4.0": 12.08267154640276
+    }
+  },
+  "rent_split": {
+    "credit": 9.66,
+    "customer_saving": 4.65597871342618,
+    "tem_markup_gain": 5.004021286573817
+  },
+  "s74_reproduction": {
+    "cells": [
+      {
+        "diff": 0.005977838721548778,
+        "exact": false,
+        "field": "price",
+        "model": 159.74597783872156,
+        "note": 159.74,
+        "rounding": true,
+        "row": "unconstrained"
+      },
+      {
+        "diff": -0.016778332478608604,
+        "exact": true,
+        "field": "win_percent",
+        "model": 67.78322166752139,
+        "note": 67.8,
+        "rounding": true,
+        "row": "unconstrained"
+      },
+      {
+        "diff": 0.005977838721554107,
+        "exact": false,
+        "field": "markup",
+        "model": 9.405977838721554,
+        "note": 9.4,
+        "rounding": true,
+        "row": "unconstrained"
+      },
+      {
+        "diff": 0.9187021046420796,
+        "exact": false,
+        "field": "margin_gbp",
+        "model": 1593.918702104642,
+        "note": 1593.0,
+        "rounding": true,
+        "row": "unconstrained"
+      },
+      {
+        "diff": 0.014000000000010004,
+        "exact": false,
+        "field": "price",
+        "model": 154.204,
+        "note": 154.19,
+        "rounding": true,
+        "row": "pass_through"
+      },
+      {
+        "diff": 0.008247954565590021,
+        "exact": true,
+        "field": "win_percent",
+        "model": 92.9082479545656,
+        "note": 92.9,
+        "rounding": true,
+        "row": "pass_through"
+      },
+      {
+        "diff": 0.014000000000004231,
+        "exact": false,
+        "field": "markup",
+        "model": 3.8640000000000043,
+        "note": 3.85,
+        "rounding": true,
+        "row": "pass_through"
+      },
+      {
+        "diff": 3.4936752411045973,
+        "exact": false,
+        "field": "margin_gbp",
+        "model": 897.4936752411046,
+        "note": 894.0,
+        "rounding": true,
+        "row": "pass_through"
+      },
+      {
+        "diff": 0.011956552147751154,
+        "exact": false,
+        "field": "price",
+        "model": 164.40195655214774,
+        "note": 164.39,
+        "rounding": true,
+        "row": "no_match"
+      },
+      {
+        "diff": -0.03991230727630679,
+        "exact": true,
+        "field": "win_percent",
+        "model": 31.160087692723692,
+        "note": 31.2,
+        "rounding": true,
+        "row": "no_match"
+      },
+      {
+        "diff": -0.08661953879214934,
+        "exact": true,
+        "field": "margin_gbp",
+        "model": 342.91338046120785,
+        "note": 343.0,
+        "rounding": true,
+        "row": "no_match"
+      }
+    ],
+    "verdict": "rounding"
+  },
+  "statics": {
+    "checked": 77,
+    "counterexamples": [
+      {
+        "beta": 0.2,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.25,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.3,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.35,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.4,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.45,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.5,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.55,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.6,
+        "c_hat": 130.0
+      },
+      {
+        "beta": 0.25,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.3,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.35,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.4,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.45,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.5,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.55,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.6,
+        "c_hat": 135.0
+      },
+      {
+        "beta": 0.3,
+        "c_hat": 140.0
+      },
+      {
+        "beta": 0.35,
+        "c_hat": 140.0
+      },
+      {
+        "beta": 0.4,
+        "c_hat": 140.0
+      }
+    ],
+    "grid_points": 77,
+    "share_markup_falls": 0.5714285714285714,
+    "sign_rule_agreement": 1.0
+  }
+}
