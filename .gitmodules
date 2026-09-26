@@ -1,0 +1,3 @@
+[submodule "pi-agent-experiments"]
+	path = pi-agent-experiments
+	url = https://github.com/ocramz/pi-agent-experiments.git
