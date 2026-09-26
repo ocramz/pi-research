@@ -1,9 +1,20 @@
 # Stage A plan — energy-pricing-model: set-up and x01 draft
 
-**Status (2026-09-26):** in progress.
-- Step 1 is done: branch `exp/energy-pricing-model` was cut from main at ea9f687, and this plan was
-  copied in.
-- Next is step 2, the x01 draft. Nothing is registered.
+**Status (2026-09-26):** set-up done. x01 is waiting for the user's hypothesis, and nothing is
+registered.
+- **Step 1.** Branch `exp/energy-pricing-model` was cut from main at ea9f687, and this plan was
+  copied in (ba3d323).
+- **Step 2.** `x01_prereg_draft.md` was written. It is not registered. Its C1 is stricter than
+  step 2 below:
+  - it expects exactly `llama`, `nb` and `nb-python`, matched by name;
+  - `llama` comes from an extension bundled with pi 0.84.2, which registers no tools.
+- **Step 3.** The launch check passed. It cost $0, since no prompt was sent.
+  - With the flags, pi listed exactly those three commands.
+  - Without the flags, pi-issue-tracker's 11 commands appeared as well, and the tracker wrote
+    `.pi/stories.db` into the workdir.
+- **Step 4.** pi-issue-tracker was removed from `~/.pi/agent/settings.json`. `pi list` now shows only
+  pi-notebook-py and pi-web-search. The old file is backed up in Claude's session scratchpad.
+- **Next:** the user completes the draft, then registration follows (see below).
 
 ## Context
 
