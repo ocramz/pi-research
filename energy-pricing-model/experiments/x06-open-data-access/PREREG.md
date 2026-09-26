@@ -412,4 +412,45 @@ committed files. The writeup goes to
 - A body in a format the parser cannot read goes to manual review, which is listed separately.
 
 ## Deviations
-(none yet)
+1. **2026-09-26, after the first run attempt: the search cap ends the turn, not the session; CSV
+   parser fix; costs from the event log.**
+   - **What happened.** Run `20260926T133032Z` (commit 5e5c63a, clean worktree) is `invalid` and is
+     kept in `results/` for the record.
+     - Every session called `web_search_tavily` 12–13 times within 60–165 s; the prompt allows 10.
+     - At the 12th call the harness sent `abort` and then stopped pi, so no session wrote
+       `evidence.json`.
+     - So C3 (the agent reports feed-a as retrieved) failed in all six sessions.
+     - Separately, the checker crashed on a CSV body whose rows had more fields than its header, so
+       no summary was produced.
+     - The attempt cost $0.033 of model credit and 73 Tavily calls.
+   - **Registered:**
+     - "A monitor aborts the session after its 12th `web_search_tavily` call";
+     - one follow-up, with the registered text, "if `evidence.json` is missing or invalid while pi is
+       alive".
+   - **Holds now:**
+     - At the 12th search the monitor sends the RPC `abort` for the current turn only, and pi stays
+       alive. Any later `web_search_tavily` call is aborted as soon as it is seen.
+     - Suppose the cap was reached and `evidence.json` is missing or invalid. Then the one allowed
+       follow-up is the cap follow-up below. Otherwise the registered follow-up applies unchanged.
+       Whether the cap was reached is read from the event log.
+     - The body parser ignores CSV fields beyond the header. This is a bug fix; the witness rules are
+       unchanged.
+     - A session's cost is the sum of the `message_end` usage costs in its event log.
+       `get_session_stats` is unavailable once pi has stopped.
+   - **Why:**
+     - The cap is there to bound search spend. Ending the whole session also ended the agent's
+       report, which made the positive control impossible to pass.
+     - The fix keeps the bound: at most 12 completed searches per session, plus any that are aborted
+       as they start. It also lets the agent report once.
+   - **Unchanged:** the datasets, the prompt, `fetch.sh`, the witness and refutation rules, the
+     controls and validity rule, the classes, N = 6, and the time and budget caps. The re-run uses
+     the registered `config.toml`.
+   - **Budget:** the user approved the re-run on 2026-09-26: up to $1.80 of model credit and about 72
+     more Tavily calls.
+
+The cap follow-up of deviation 1, sent verbatim and at most once:
+
+<!-- registered file: cap_followup.txt -->
+```text
+You have used the search budget for this task. Do not search again and do not download anything more. Write evidence.json now, with one entry for each of the 8 sources, from what you have already saved in evidence/. Then stop.
+```
