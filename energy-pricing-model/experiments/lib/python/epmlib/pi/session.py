@@ -42,6 +42,7 @@ class SessionSpec:
     search_hard_cap: int
     max_followups: int
     thinking: str
+    cap_followup: str = ""  # deviation 1: the one follow-up when the search cap was reached
     send_prompt: bool = True
 
 
@@ -112,20 +113,24 @@ def _turn(driver: Driver, first: list[str], deadline: float) -> dict[str, Any]:
 
 
 def _monitor(driver: Driver, cap: int, stop: threading.Event, fired: dict) -> None:
+    """Deviation 1: at the cap, abort the current turn only (pi stays alive); abort again whenever a
+    later search appears. Never stops pi."""
     events = driver.drive / "events.jsonl"
+    aborted_at = 0
+    fired.setdefault("aborts", 0)
     while not stop.is_set():
         if events.exists():
             try:
                 n = search_count(list(iter_events(events)))
             except OSError:
                 n = 0
-            if n >= cap and not fired.get("done"):
+            if n >= cap and n > aborted_at:
+                aborted_at = n
                 fired["done"] = True
                 fired["searches"] = n
+                fired["aborts"] += 1
                 driver.cmd({"type": "abort"}, timeout=20)
-                driver.run("stop", str(driver.drive), timeout=60)
-                return
-        stop.wait(2.0)
+        stop.wait(0.5)
 
 
 def run_session(spec: SessionSpec, paths: PiPaths, base_env: dict[str, str], secrets: dict[str, str],
@@ -153,6 +158,7 @@ def run_session(spec: SessionSpec, paths: PiPaths, base_env: dict[str, str], sec
     rec["precheck"] = precheck
     followups = 0
     followup_errors: list[list[str]] = []
+    followup_kinds: list[str] = []
     turns = []
     monitor_state: dict[str, Any] = {}
     if precheck["ok"] and spec.send_prompt:
@@ -163,16 +169,22 @@ def run_session(spec: SessionSpec, paths: PiPaths, base_env: dict[str, str], sec
         deadline = t0 + spec.max_seconds + 30
         turns.append(_turn(driver, ["send", str(drive), spec.prompt], deadline))
         ev_path = work / "evidence.json"
-        while followups < spec.max_followups and driver.alive() and not monitor_state.get("done"):
+        while followups < spec.max_followups and driver.alive():
             try:
                 errors = validate_evidence(json.loads(ev_path.read_text()), list(spec.source_ids), work)
             except (OSError, ValueError):
                 errors = ["evidence.json is missing or is not valid JSON"]
             if not errors:
                 break
+            events_now = drive / "events.jsonl"
+            cap_hit = events_now.exists() and search_count(list(iter_events(events_now))) >= spec.search_hard_cap
             followup_errors.append(errors[:10])
-            text = string.Template(spec.followup_template).safe_substitute(errors="; ".join(errors[:10]))
+            if cap_hit and spec.cap_followup:
+                text = spec.cap_followup
+            else:
+                text = string.Template(spec.followup_template).safe_substitute(errors="; ".join(errors[:10]))
             followups += 1
+            followup_kinds.append("cap" if cap_hit and spec.cap_followup else "registered")
             turns.append(_turn(driver, ["send", str(drive), text.rstrip("\n")], deadline))
         stop_monitor.set()
     rpc["get_session_stats"] = (driver.cmd({"type": "get_session_stats"}) or {}) if driver.alive() else {}
@@ -191,7 +203,8 @@ def run_session(spec: SessionSpec, paths: PiPaths, base_env: dict[str, str], sec
             pass
         serve.wait()
     serve_out.close()
-    rec.update({"turns": turns, "followups": followups, "followup_errors": followup_errors, "search_monitor": monitor_state,
+    rec.update({"turns": turns, "followups": followups, "followup_errors": followup_errors,
+                "followup_kinds": followup_kinds, "search_monitor": monitor_state,
                 "wall_seconds": round(time.monotonic() - t0, 1)})
     _copy(spec, work, drive, rpc)
     rec["redactions"] = redact_tree(spec.out_dir, secrets)

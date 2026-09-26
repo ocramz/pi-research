@@ -23,7 +23,7 @@ from ..outcomes import Rule, first_match, otherwise
 from ..runlib import RunStatus, open_run, parse_args
 from ..pi.audit import check_c1, check_c2, isolation_snapshot, tool_arg_texts
 from ..pi.control_server import ControlServer
-from ..pi.events import curl_writeouts, iter_events, tool_calls
+from ..pi.events import curl_writeouts, events_cost, iter_events, tool_calls
 from ..pi.evidence import DatasetSpec, agent_outcomes, judge_dataset
 from ..pi.paths import PiPaths, sha256_file
 from ..pi.secrets import scan_tree
@@ -139,7 +139,7 @@ def check_session(cfg: Config, sdir: Path, rec: dict[str, Any], paths: PiPaths, 
     c4["ok"] = all(c4.values())
     accuracy = {sid: {"agent": outcomes.get(sid), "witness": judged[sid]["witness"], "refuted": judged[sid]["refuted"]}
                 for sid in SOURCE_IDS}
-    return {"c1": c1, "c3": c3, "c4": c4, "datasets": judged, "accuracy": accuracy,
+    return {"c1": c1, "c3": c3, "c4": c4, "datasets": judged, "accuracy": accuracy, "cost_usd": events_cost(events),
             "tool_args": tool_arg_texts(events), "writeouts": len(writeouts), "fetch_sh_unchanged": fetch_ok}
 
 
@@ -168,7 +168,7 @@ def summarise(cfg: Config, records: list[dict], checks: dict[str, dict], c2: dic
     valid = c1_all and c2["ok"] and not feed_b_witness and c3c4 >= cfg.sessions.min_valid_sessions
     n_acc = sum(1 for v in verdicts.values() if v["verdict"] == "accessible")
     n_ref = sum(1 for v in verdicts.values() if v["verdict"] == "not_as_claimed")
-    costs = [r.get("cost_usd") for r in records if isinstance(r.get("cost_usd"), (int, float))]
+    costs = [c["cost_usd"] for c in checks.values()]  # deviation 1: from the event log
     summary: dict[str, Any] = {
         "experiment": EXPERIMENT,
         "valid": valid,
@@ -225,6 +225,7 @@ def main(argv: list[str] | None, exp_dir: Path) -> int:
     fetch_sha = sha256_file(exp_dir / "fetch.sh")
     prompt_t = (exp_dir / cfg.sessions.prompt_file).read_text()
     followup_t = (exp_dir / "followup.txt").read_text()
+    cap_followup_t = (exp_dir / "cap_followup.txt").read_text().rstrip("\n")
     work_root = Path(os.path.expanduser(cfg.pi.workdir_root)) / ctx.run_id
     stop_flag = threading.Event()
     feeds: dict[str, Any] = {}
@@ -256,7 +257,7 @@ def main(argv: list[str] | None, exp_dir: Path) -> int:
             specs.append(SessionSpec(i, name, work_root / name, ctx.run_dir / "sessions" / name, prompt.rstrip("\n"),
                                      followup_t, fetch_bytes, SOURCE_IDS, cfg.sessions.max_seconds,
                                      cfg.sessions.budget_usd, cfg.sessions.search_hard_cap, cfg.sessions.max_followups,
-                                     cfg.pi.thinking, cfg.sessions.send_prompt))
+                                     cfg.pi.thinking, cap_followup_t, cfg.sessions.send_prompt))
 
         def launch(spec: SessionSpec) -> dict | None:
             if stop_flag.is_set():

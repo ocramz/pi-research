@@ -133,7 +133,7 @@ def test_every_class_is_reachable():
     assert first_match(x06.RULES, {**base, "n_accessible": 3}).cls == "inconclusive"
 
 
-@pytest.mark.parametrize("mode", ["honest", "liar", "bad_tool", "leaks_key"])
+@pytest.mark.parametrize("mode", ["honest", "liar", "bad_tool", "leaks_key", "search_spam"])
 def test_end_to_end_with_fake_pi(tmp_path, monkeypatch, mode):
     from epmlib.pi.paths import PiPaths
     nb = PiPaths.discover(EXP).notebook_ext
@@ -158,7 +158,16 @@ def test_end_to_end_with_fake_pi(tmp_path, monkeypatch, mode):
         assert not sess["C4"] and not s["valid"] and s["class"] == "invalid"
     elif mode == "bad_tool":
         assert not sess["C1"] and s["class"] == "invalid"
-    else:
+    elif mode == "leaks_key":
         rec = [json.loads(x) for x in (run / "records.jsonl").read_text().splitlines()][0]
         assert rec["redactions"]["OPENROUTER_API_KEY"] >= 1 and s["secrets_left_after_redaction"] == []
+    else:  # deviation 1: the cap aborts the turn, and the cap follow-up gets the report written
+        rec = [json.loads(x) for x in (run / "records.jsonl").read_text().splitlines()][0]
+        assert rec["followup_kinds"] == ["cap"] and rec["search_monitor"]["done"]
+        assert sess["C1"] and sess["C3"] and sess["C4"] and s["valid"]
     assert not os.environ.get("PI_MODEL")
+
+
+def test_csv_with_extra_fields_does_not_crash():
+    body = ("time,value\n" + "".join(f"{t},1,extra,more\n" for t in _hh())).encode()
+    assert _best(body)[0] == (48, 30.0)

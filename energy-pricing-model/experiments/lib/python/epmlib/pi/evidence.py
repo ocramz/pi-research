@@ -146,7 +146,7 @@ class Candidate:
 
 
 def _from_records(rows: list[dict[str, Any]]) -> list[Candidate]:
-    keys = sorted({k for r in rows for k in r})
+    keys = sorted({k for r in rows for k in r if isinstance(k, str)})
     out = []
     for k in keys:
         ts = [parse_dt(r.get(k)) for r in rows]
@@ -213,7 +213,9 @@ def parse_body(body: bytes) -> tuple[list[Candidate], set[str], str]:
         dialect = csv.Sniffer().sniff(text[:4096], delimiters=",;\t")
     except csv.Error:
         dialect = csv.excel
-    rows = list(csv.DictReader(io.StringIO(text), dialect=dialect))
+    # Fields beyond the header land under the key None: ignore them (deviation 1's parser fix).
+    rows = [{k: v for k, v in r.items() if k is not None}
+            for r in csv.DictReader(io.StringIO(text), dialect=dialect)]
     if rows and rows[0]:
         names.update(k for k in rows[0] if k)
         return _from_records(rows), names, "csv"

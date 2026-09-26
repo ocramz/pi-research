@@ -84,3 +84,20 @@ def search_count(events: list[dict]) -> int:
 
 def extension_errors(events: list[dict]) -> list[dict]:
     return [ev for ev in events if ev.get("type") == "extension_error"]
+
+
+def events_cost(events: list[dict]) -> float:
+    """Σ of message_end usage cost: the session's spend, readable after pi has stopped (deviation 1)."""
+    total = 0.0
+    for ev in events:
+        if ev.get("type") == "message_end":
+            usage = (ev.get("message") or {}).get("usage") or {}
+            c = (usage.get("cost") or {}).get("total")
+            if isinstance(c, (int, float)):
+                total += float(c)
+        elif ev.get("type") == "compaction_end":
+            usage = (ev.get("result") or {}).get("usage") or {}
+            c = (usage.get("cost") or {}).get("total")
+            if isinstance(c, (int, float)):
+                total += float(c)
+    return total
