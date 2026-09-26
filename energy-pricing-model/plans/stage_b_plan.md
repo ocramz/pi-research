@@ -39,7 +39,11 @@
   - The first attempt, `20260926T133032Z`, was `invalid`: every session reached the search cap
     before reporting. Deviation 1 was then approved by the user and applied.
   - Run `20260926T135115Z`, at commit 6a588c4. Model cost $0.073.
-- **Next:** the gate G1 report.
+- **Gate G1 reached (2026-09-26).**
+  - The report is in `writeup_generated/stage-b-gate-g1.md`.
+  - Option drafts, none registered: `x01a_surplus_scaled_rule_draft.md`,
+    `x07_pi_replicates_x04_draft.md` and `x06a_neso_ews_draft.md`.
+  - Stopped for the user's decisions. Nothing new is registered.
 
 ## Context
 
