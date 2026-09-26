@@ -12,7 +12,13 @@
   - `note-dual-statements` fails: S1 and S2 are contradicted on 100% of eligible instances, and S3
     misclassifies 12.1%.
   - Run `20260926T120707Z`, at commit a504ce3.
-- **Next:** x02.
+- **x02 done:**
+  - `peak-above-balance`: r_peak = 2.23, O_max = 13.5%, P_B(above) = 1.00. The note's "peaks at
+    balance" is refuted in toy v1.
+  - `pointforecast-underprices` fails: point forecasts overprice in 12 of 18 cells, including every
+    cell at N = 60 and N = 100.
+  - Run `20260926T122425Z`, at commit eaa2396.
+- **Next:** x03.
 
 ## Context
 

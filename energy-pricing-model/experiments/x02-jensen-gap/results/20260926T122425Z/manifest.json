@@ -1,0 +1,52 @@
+{
+  "argv": [
+    "x02-jensen-gap/run.py",
+    "--out",
+    "/home/azureuser/pi-research/energy-pricing-model/experiments/x02-jensen-gap/results",
+    "--workers",
+    "4"
+  ],
+  "blas_threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "code_root": "/home/azureuser/pi-research-worktrees/epm",
+  "config_path": "/home/azureuser/pi-research-worktrees/epm/energy-pricing-model/experiments/x02-jensen-gap/config.toml",
+  "config_sha256": "965efefa7578424f5163e6793bd5e86629edfbee954d146feb7b08039077fe79",
+  "cpu": {
+    "count": 4,
+    "cpu_implementer": "0x41",
+    "cpu_part": "0xd49",
+    "features": "fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm uscat ilrcpc flagm sb paca pacg dcpodp sve2 sveaes svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16",
+    "processor": null
+  },
+  "cpu_seconds": 1.559,
+  "experiment": "x02-jensen-gap",
+  "extra": {},
+  "finished_utc": "2026-09-26T12:27:29Z",
+  "git_commit": "eaa2396f9bba45aaae7f47bc573cec319953ccae",
+  "git_commit_end": "eaa2396f9bba45aaae7f47bc573cec319953ccae",
+  "git_dirty": false,
+  "git_dirty_end": false,
+  "machine": "aarch64",
+  "main_root": "/home/azureuser/pi-research",
+  "memory_bytes": 16750583808,
+  "numpy": "2.5.3",
+  "platform": "Linux-6.1.0-53-cloud-arm64-aarch64-with-glibc2.36",
+  "porcelain": [],
+  "python": "3.12.14",
+  "python_executable": "/home/azureuser/pi-research-worktrees/epm/energy-pricing-model/experiments/.venv/bin/python",
+  "resumes": [],
+  "run_id": "20260926T122425Z",
+  "scipy": "1.18.1",
+  "seed": 20260926,
+  "smoke": false,
+  "started_utc": "2026-09-26T12:24:25Z",
+  "status": "complete",
+  "unit_cpu_seconds": 709.597,
+  "uv_lock_sha256": "8c45435baa80cc978783af9ee0bff25055ac2919fc1aff0742b5dbe7a202ab11",
+  "wall_seconds": 183.96,
+  "workers": 4,
+  "worktree": true
+}
