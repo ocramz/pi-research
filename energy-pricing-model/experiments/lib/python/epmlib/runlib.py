@@ -198,7 +198,10 @@ class RunContext:
     def write_artifact(self, name: str, obj: object) -> None:
         jsonio.write_json(self.run_dir / name, obj)
 
-    def finish(self, summary: dict[str, Any], status: RunStatus = RunStatus.COMPLETE) -> None:
+    def finish(self, summary: dict[str, Any], status: RunStatus = RunStatus.COMPLETE, *,
+               unit_cpu_seconds: float | None = None) -> None:
+        """`cpu_seconds` is this process's (and its waited children's); forkserver workers are not its
+        children, so experiments also report `unit_cpu_seconds`, measured inside each unit."""
         jsonio.write_json(self.run_dir / "summary.json", summary)
         state = git_state(Path(self.manifest["code_root"]))
         self.manifest.update({
@@ -207,6 +210,7 @@ class RunContext:
             "wall_seconds": round(self.manifest.get("wall_seconds_before", 0.0)
                                   + time.monotonic() - self._started, 3),
             "cpu_seconds": round(_cpu_seconds(), 3),
+            "unit_cpu_seconds": None if unit_cpu_seconds is None else round(unit_cpu_seconds, 3),
             "git_dirty_end": state.dirty,
             "git_commit_end": state.commit,
         })
@@ -214,7 +218,7 @@ class RunContext:
         jsonio.write_json(self.run_dir / "manifest.json", self.manifest)
 
 
-def open_run(experiment: str, exp_dir: Path, args: RunArgs, *, seed: int,
+def open_run(experiment: str, exp_dir: Path, args: RunArgs, *,
              extra: dict[str, Any] | None = None, state: GitState | None = None) -> RunContext:
     """Check that this is an honest run, then create (or reopen, with --resume) its directory."""
     config, raw = load_toml(args.config)
@@ -235,6 +239,7 @@ def open_run(experiment: str, exp_dir: Path, args: RunArgs, *, seed: int,
     if config.get("experiment", {}).get("name") != experiment:
         raise RefusedRun(f"config names {config.get('experiment', {}).get('name')!r}, not {experiment!r}")
     workers = args.workers or int(config.get("run", {}).get("workers", 1))
+    seed = config.get("experiment", {}).get("seed")
     uv_lock = exp_dir.parent / "uv.lock"
 
     if args.resume:

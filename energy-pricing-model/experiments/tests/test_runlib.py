@@ -48,7 +48,7 @@ def _args(exp: Path, out: Path, **kw) -> RunArgs:
 
 
 def test_registered_run_writes_manifest_and_config_copy(repo):
-    ctx = open_run("x99-demo", repo, _args(repo, repo / "results"), seed=1)
+    ctx = open_run("x99-demo", repo, _args(repo, repo / "results"))
     m = json.loads((ctx.run_dir / "manifest.json").read_text())
     assert m["git_dirty"] is False and m["smoke"] is False and m["workers"] == 2
     assert len(m["git_commit"]) == 40 and m["uv_lock_sha256"] and m["config_sha256"]
@@ -64,10 +64,10 @@ def test_registered_run_writes_manifest_and_config_copy(repo):
 def test_dirty_tree_is_refused_unless_smoke_outside_repo(repo, tmp_path):
     (repo / "stray.txt").write_text("x")
     with pytest.raises(RefusedRun, match="uncommitted"):
-        open_run("x99-demo", repo, _args(repo, repo / "results"), seed=1)
+        open_run("x99-demo", repo, _args(repo, repo / "results"))
     with pytest.raises(RefusedRun, match="outside the repository"):
-        open_run("x99-demo", repo, _args(repo, repo / "results", allow_dirty=True), seed=1)
-    ctx = open_run("x99-demo", repo, _args(repo, tmp_path / "smoke", allow_dirty=True), seed=1)
+        open_run("x99-demo", repo, _args(repo, repo / "results", allow_dirty=True))
+    ctx = open_run("x99-demo", repo, _args(repo, tmp_path / "smoke", allow_dirty=True))
     assert ctx.smoke and json.loads((ctx.run_dir / "manifest.json").read_text())["git_dirty"] is True
 
 
@@ -75,18 +75,18 @@ def test_config_drift_is_refused(repo, tmp_path):
     other = tmp_path / "other.toml"
     other.write_text(CONFIG.replace("workers = 2", "workers = 3"))
     with pytest.raises(RefusedRun, match="differs from the config registered"):
-        open_run("x99-demo", repo, _args(repo, repo / "results", config=other), seed=1)
+        open_run("x99-demo", repo, _args(repo, repo / "results", config=other))
     smoke = tmp_path / "smoke.toml"
     smoke.write_text(CONFIG.replace('seed = 1', 'seed = 1\nsmoke = true'))
-    ctx = open_run("x99-demo", repo, _args(repo, tmp_path / "s", config=smoke), seed=1)
+    ctx = open_run("x99-demo", repo, _args(repo, tmp_path / "s", config=smoke))
     assert ctx.smoke
 
 
 def test_resume_keeps_records_and_checks_config(repo, tmp_path):
-    ctx = open_run("x99-demo", repo, _args(repo, repo / "results"), seed=1)
+    ctx = open_run("x99-demo", repo, _args(repo, repo / "results"))
     ctx.append_record({"key": "u1"})
     ctx.save_checkpoint("state", {"n": 1})
-    again = open_run("x99-demo", repo, _args(repo, repo / "results", resume=ctx.run_id), seed=1)
+    again = open_run("x99-demo", repo, _args(repo, repo / "results", resume=ctx.run_id))
     assert again.run_dir == ctx.run_dir and again.done_keys() == {"u1"}
     assert again.load_checkpoint("state") == {"n": 1}
     assert len(again.manifest["resumes"]) == 1

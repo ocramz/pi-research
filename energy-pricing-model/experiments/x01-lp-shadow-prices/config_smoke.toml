@@ -1,0 +1,38 @@
+# Smoke config: NOT registered. For checking the pipeline end to end; results go to the scratchpad.
+[experiment]
+name = "x01-lp-shadow-prices"
+seed = 20260926
+smoke = true
+
+[part_a]
+instances = 300
+degenerate_per_kind = 10
+customer_counts = [1, 2, 3, 5, 10, 20]
+asset_counts = [1, 2, 3, 5, 10, 20]
+demand_lognormal_sigma = 1.0
+gen_ratio_range = [0.25, 4.0]
+premium_range = [0.0, 60.0]
+lam = 45.0
+kappa = 2.5
+lp_time_limit_s = 10.0
+dual_tol = 1e-6
+objective_rtol = 1e-9
+
+[part_b]
+toy_spec = "plans/toy_v1_spec.md@26abb27"
+scenarios = 12
+books = [10, 20, 40, 60, 100]
+q_percent = [0.25, 1.0, 2.0, 8.0, 16.0]
+rule_q_percent = 2.0
+tolerance = 0.05
+bootstrap = 200
+lhs_cells = 2
+highs_check_halfhours = 20
+highs_check_scenarios = 2
+highs_check_q_percent = [2.0, 16.0]
+
+[run]
+workers = 2
+config_cap_s = 300
+wall_cap_s = 2700
+max_censored_fraction = 0.001
