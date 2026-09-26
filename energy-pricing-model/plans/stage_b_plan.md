@@ -27,7 +27,13 @@
     (0.96/4.05/18.00%), not at p* (1.71/6.37/20.65%). Jitter that respects the cap costs 19.6% at £1.
   - §7.4 reproduces at `rounding`.
   - Run `20260926T124644Z`, at commit 6ecd92f.
-- **Next:** x05.
+- **x05 done:**
+  - `pays-when-confounded`: Δ(RL, 2) is −0.99 / −0.47 / +2.89 / +31.7% at ρ = 0 / 0.3 / 0.5 / 0.8.
+  - `naive-inelastic` holds: attenuation 0 / 12 / 29 / 57%.
+  - RL recovers β_marg = 0.278, not 0.33.
+  - Deviation 1, made before the run, scopes C6 to the primary grid.
+  - Run `20260926T130201Z`, at commit 13f9d09.
+- **Next:** x06, the only paid experiment.
 
 ## Context
 
