@@ -14,7 +14,10 @@ registered.
     `.pi/stories.db` into the workdir.
 - **Step 4.** pi-issue-tracker was removed from `~/.pi/agent/settings.json`. `pi list` now shows only
   pi-notebook-py and pi-web-search. The old file is backed up in Claude's session scratchpad.
-- **Next:** the user completes the draft, then registration follows (see below).
+- **Superseded (2026-09-26) by `stage_b_plan.md`.**
+  - The user supplied the design note in `docs/`.
+  - x01 is now `x01-lp-shadow-prices`.
+  - The pi launch draft, with its C1 and C2 controls, is carried into `x06-open-data-access`.
 
 ## Context
 

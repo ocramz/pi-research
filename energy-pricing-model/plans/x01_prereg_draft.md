@@ -1,5 +1,10 @@
 # x01-`<slug>` — pre-registration (DRAFT, not registered)
 
+> **Superseded 2026-09-26, and never registered.**
+> - Stage B (`stage_b_plan.md`) carries this draft's pi launch and its C1 and C2 controls into
+>   `experiments/x06-open-data-access/PREREG.md`.
+> - The number x01 now belongs to `x01-lp-shadow-prices`.
+
 > **DRAFT, not registered.** This file is for the user's decision. It becomes the x01 registration
 > only when all of the following hold:
 > - it has moved to `energy-pricing-model/experiments/x01-<slug>/PREREG.md`;
