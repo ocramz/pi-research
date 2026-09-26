@@ -1,0 +1,5 @@
+.cache/
+.env
+
+# pi-issue-tracker's database, anchored at the git root
+.pi/stories.db*
