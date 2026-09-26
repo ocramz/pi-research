@@ -18,7 +18,11 @@
   - `pointforecast-underprices` fails: point forecasts overprice in 12 of 18 cells, including every
     cell at N = 60 and N = 100.
   - Run `20260926T122425Z`, at commit eaa2396.
-- **Next:** x03.
+- **x03 done:**
+  - `congestion-dominant`: R = 3.62 (CI 3.58–3.66), but R < 2 in solar-heavy pools (θ_s ≳ 0.75).
+  - `shape-rank-solar` and `shape-gap-vs-markup` both hold: the gap is £4.48/MWh.
+  - Run `20260926T123334Z`, at commit 531080c.
+- **Next:** x04.
 
 ## Context
 
