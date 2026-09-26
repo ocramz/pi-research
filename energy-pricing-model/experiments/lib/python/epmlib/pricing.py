@@ -96,3 +96,18 @@ def second_order_loss_at_optimum(c_hat: float, win: WinModel) -> float:
 
 
 assert math.isclose(expit(0.0), 0.5)
+
+
+def optimal_price_vec(c_hat: float, beta: float, p_ref, *, span: float = 100.0, iterations: int = 64):
+    """optimal_price for an array of p_ref values at once, by vectorised bisection on g(p)."""
+    import numpy as np
+    r = np.asarray(p_ref, dtype=float)
+    lo = np.full_like(r, c_hat)
+    hi = np.full_like(r, c_hat + span)
+    for _ in range(iterations):
+        mid = 0.5 * (lo + hi)
+        g = mid - c_hat - 1.0 / (beta * expit(beta * (mid - r)))
+        neg = g < 0
+        lo = np.where(neg, mid, lo)
+        hi = np.where(neg, hi, mid)
+    return 0.5 * (lo + hi)

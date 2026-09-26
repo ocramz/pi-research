@@ -1,0 +1,47 @@
+[experiment]
+name = "x05-confounded-elasticity"
+seed = 20260926
+
+[market]
+segment_bases = [159.0, 161.0, 163.0, 165.0]
+beta = 0.33
+tau_u = 3.0
+tau_zeta = 2.0
+c_hat = 150.34
+quadrature_nodes = 64
+
+[pipelines]
+historical_quotes = 2000
+logging_quotes = 2000
+exploit_quotes = 8000
+jitter_sigmas = [1.0, 2.0, 4.0]
+primary_sigma = 2.0
+grid_offsets = [-4.0, -2.0, 0.0, 2.0, 4.0]
+mirage_min_slope = 0.02
+mirage_markup = 40.0
+irls_max_iter = 50
+irls_tol = 1e-10
+
+[grid]
+rhos = [0.0, 0.3, 0.5, 0.8]
+replications = 1000
+oat_rhos = [0.0, 0.5]
+oat_tau_u = [1.5, 5.0]
+oat_tau_zeta = [1.0, 4.0]
+oat_logging_quotes = [500, 5000]
+
+[checker]
+ips_logs = 2000
+ips_offsets = [-4.0, 0.0, 4.0]
+positive_control_quotes = 100000
+positive_control_halfwidth = 6.0
+simulator_quotes = 1000000
+simulator_offsets = [-3.0, 0.0, 3.0]
+oracle_grid_step = 0.001
+se_multiple_c1 = 3.0
+se_multiple_c4 = 4.0
+
+[run]
+workers = 4
+max_censored_fraction = 0.01
+wall_cap_s = 1800

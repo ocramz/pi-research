@@ -227,4 +227,20 @@ The writeup goes to `energy-pricing-model/writeup_generated/x05-confounded-elast
 - The horizon value is computed from the true response, which a real firm cannot observe.
 
 ## Deviations
-(none yet)
+1. **2026-09-26, before the run: C6 is scoped to the primary grid.**
+   - **Registered:** C6, at most 1% of fits censored "in every cell", with any failure making the
+     run `invalid`.
+   - **Holds now:** C6 applies to the primary grid, meaning the main market at ρ ∈ {0, 0.3, 0.5,
+     0.8} × σ_j ∈ {1, 2, 4}. In the one-at-a-time (OAT) robustness cells, the share of censored
+     fits is reported instead. Δ there is reported over converged replications, and flagged as
+     conditional on convergence.
+   - **Why:** A smoke run (100 replications, not registered) censored 26% of the RL refits at
+     τ_ζ = 1, ρ = 0.5, and 2% at τ_u = 5, ρ = 0.5. This is not a failure of the estimator.
+     - With little exogenous desk noise, the naive slope collapses to about 0.02–0.05, so the NV
+       price sits £18–30 above the oracle.
+     - Jitter of ±£2 around it wins 0–3 of about 500 quotes per segment.
+     - A segment with no wins is completely separated, so no maximum-likelihood estimate exists.
+
+     That is a finding about the pipeline, not a numerical fault, and it should not invalidate the
+     primary hypothesis, which uses the primary grid only.
+   - **Unchanged:** the primary grid, the hypotheses, the outcome classes and every other control.

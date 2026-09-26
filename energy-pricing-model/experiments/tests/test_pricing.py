@@ -93,3 +93,11 @@ def test_golden_pricing():
     want = json.loads(GOLDEN.read_text())
     for k, v in golden_stats().items():
         assert v == pytest.approx(want[k], rel=1e-12), k
+
+
+def test_vectorised_optimal_price_equals_scalar():
+    from epmlib.pricing import optimal_price_vec
+    refs = np.linspace(150.0, 175.0, 11)
+    got = optimal_price_vec(150.34, 0.33, refs)
+    want = [optimal_price(150.34, WinModel(0.33, r)) for r in refs]
+    assert np.allclose(got, want, atol=1e-10)
