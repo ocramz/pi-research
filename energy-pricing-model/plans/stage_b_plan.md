@@ -22,7 +22,12 @@
   - `congestion-dominant`: R = 3.62 (CI 3.58–3.66), but R < 2 in solar-heavy pools (θ_s ≳ 0.75).
   - `shape-rank-solar` and `shape-gap-vs-markup` both hold: the gap is £4.48/MWh.
   - Run `20260926T123334Z`, at commit 531080c.
-- **Next:** x04.
+- **x04 done:**
+  - `misattributed-cap`: §7.5's 1.0/4.0/18.1% are symmetric jitter at the γ = 60% cap price
+    (0.96/4.05/18.00%), not at p* (1.71/6.37/20.65%). Jitter that respects the cap costs 19.6% at £1.
+  - §7.4 reproduces at `rounding`.
+  - Run `20260926T124644Z`, at commit 6ecd92f.
+- **Next:** x05.
 
 ## Context
 
