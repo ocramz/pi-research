@@ -126,7 +126,10 @@ class ToyEngine:
                 if keep_sites_at is not None:
                     kept.append(d.ravel()[keep_sites_at])
                 i += 1
-            sites = np.array(kept).reshape(len(kept), -1) if keep_sites_at is not None else None
+            if keep_sites_at is None:
+                sites = None
+            else:
+                sites = np.array(kept) if kept else np.zeros((0, len(keep_sites_at)))
             yield n, c.copy(), sites
 
     def expected_book(self, n: int) -> np.ndarray:
