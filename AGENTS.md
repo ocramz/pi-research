@@ -5,9 +5,8 @@ Experiments follow the experiment-protocol skill
 
 ## Default pi extensions
 
-New experiments run pi with these three extensions :
+New experiments run pi with these extensions :
 
-- **pi-issue-tracker**: stories and epics; its DB is `.pi/stories.db` (gitignored).
 - **pi-notebook-py**: Python notebooks. Saved notebooks go to `.pi/notebooks/*.py`; commit them.
 - **pi-web-search**: `web_search_tavily`; needs `TAVILY_API_KEY` at call time.
 
